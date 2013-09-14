@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style>
+      #data{
+        width:300px;
+      }
+      #token{
+        width:300px;
+        padding:50px;
+      }
+      body{
+        font-family: Verdana;
+      }
+    </style>
+  <script src="main.js" ></script>
+   <script src="jquery-1.10.1.min.js" ></script>
+  </head>
+  <body >
+    <div id="data">
+      <div id="options" style="display:none;">
+        <a id="toggle_pause" href="javascript:void(0)" > </a>&nbsp;
+
+        <a id="toggle_clear" href="javascript:void(0)" > Clear *All* Stats</a>&nbsp;
+      </div>
+      <div>
+        <a href="#" id="logout">Logout </a>
+      </div>
+
+      <div id="nextClear">
+      </div>
+
+      <div id="stats"></div>
+    </div>
+
+    <form id="loginform">
+      <h4>whoami - Sign in</h4>
+      <div>
+        <label> Email </label>
+        <input type="email" name="email" />
+      </div>
+      <div>
+        <label> Password </label>
+        <input type="password" name="token" />
+      </div>
+      <input type="submit" id="postdata" label="Sign in"/>
+    </form>
+    
+  </body>
+</html>
