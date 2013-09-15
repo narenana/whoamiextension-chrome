@@ -41,8 +41,11 @@ function addFrame() {
    var sortedSites = new Array();
    var totalTime = 0;
    for (site in sites) {
-     sortedSites.push([site, sites[site]]);
-     totalTime += sites[site];
+      if(!isNaN(sites[site])){
+        sortedSites.push([site, sites[site]]);
+        totalTime += sites[site];
+      }
+     
    }
    sortedSites.sort(function(a, b) {
      return b[1] - a[1];
@@ -72,13 +75,7 @@ function addFrame() {
      var site = sortedSites[index][0];
      row = document.createElement("tr");
      cell = document.createElement("td");
-     var removeImage = document.createElement("img");
-     removeImage.src = chrome.extension.getURL("images/remove.png");
-     removeImage.title = "Remove and stop tracking.";
-     removeImage.width = 10;
-     removeImage.height = 10;
-     removeImage.onclick = addIgnoredSite(site);
-     cell.appendChild(removeImage);
+     
      cell.appendChild(document.createTextNode(site));
      row.appendChild(cell);
      cell = document.createElement("td");
